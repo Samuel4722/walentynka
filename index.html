@@ -90,26 +90,26 @@
     const yesText = document.getElementById('yesText');
     const buttonsBox = document.getElementById('buttonsBox');
 
-    
     const gifStart = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjl1ZDR6M29mNDN4ZnN2ZzlvMmRkZjJ5cnA4bjl2enF3NHo0dTBwcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xM3ptQtRagYCs/giphy.gif";
-    const gifTak = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbHprOWYzNmRrZ2xubjljb2Njazd4Mm11bGowZW0xbDR1NnpxeXBscyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TmT51OyQLFD7a/giphy.gif;
+    const gifTak = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbHprOWYzNmRrZ2xubjljb2Njazd4Mm11bGowZW0xbDR1NnpxeXBscyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/TmT51OyQLFD7a/giphy.gif";
     const gifNie = "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExa3VzYXM3bzlsMHlxd3hrMXYzczY5OXowYmxtYmQ5c3o4a3l4b3ZndyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/bjB3gtFvREqqr5NAHW/giphy.gif";
 
     let noClicks = 0;
 
     yesBtn.addEventListener('click', () => {
-        gif.src = gifTak;          
-        buttonsBox.style.display = "none"; 
-        yesText.style.display = "block"; 
+        gif.src = gifTak;
+        buttonsBox.style.display = "none";
+        yesText.style.display = "block";
+    });
 
     noBtn.addEventListener('click', () => {
         noClicks++;
 
-        gif.src = gifNie; 
+        gif.src = gifNie;
 
         if (noClicks >= 4) {
-            noBtn.style.display = "none"; 
-            gif.src = gifTak;             
+            noBtn.style.display = "none";
+            gif.src = gifTak;
         }
     });
 </script>
