@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Czy zostaniesz moją Walentynką?</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffc6e5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            text-align: center;
+            background: #ffe4f2;
+            padding: 30px 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            color: #d81b60;
+        }
+
+        img {
+            max-width: 250px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        button {
+            padding: 10px 25px;
+            font-size: 18px;
+            border-radius: 999px;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        #yesBtn {
+            background-color: #e91e63;
+            color: white;
+        }
+
+        #noBtn {
+            background-color: #ffffff;
+            color: #e91e63;
+            border: 2px solid #e91e63;
+        }
+
+        #yesText {
+            display: none;
+            font-size: 50px;
+            color: #d81b60;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <h1>Czy zostaniesz moją Walentynką? ❤️</h1>
+
+    <img id="gif" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExd2Z2dGZ3c2Z6b2Z3d3Z4d2Z3d2Z3d2Z3d2Z3d2Z3d2Z3/giphy.gif">
+
+    <div id="yesText">YES ❤️</div>
+
+    <div class="buttons" id="buttonsBox">
+        <button id="yesBtn">Tak</button>
+        <button id="noBtn">Nie</button>
+    </div>
+</div>
+
+<script>
+    const yesBtn = document.getElementById('yesBtn');
+    const noBtn = document.getElementById('noBtn');
+    const gif = document.getElementById('gif');
+    const yesText = document.getElementById('yesText');
+    const buttonsBox = document.getElementById('buttonsBox');
+
+    
+    const gifStart = "https://giphy.com/gifs/love-kiss-minions-xM3ptQtRagYCs";
+    const gifTak = "https://giphy.com/gifs/america-fireworks-4th-of-july-TmT51OyQLFD7a";
+    const gifNie = "https://giphy.com/gifs/cbc-schitts-creek-h45zAKT2Np2ZS5tHvk";
+
+    let noClicks = 0;
+
+    yesBtn.addEventListener('click', () => {
+        gif.src = gifTak;          
+        buttonsBox.style.display = "none"; 
+        yesText.style.display = "block"; 
+
+    noBtn.addEventListener('click', () => {
+        noClicks++;
+
+        gif.src = gifNie; 
+
+        if (noClicks >= 4) {
+            noBtn.style.display = "none"; 
+            gif.src = gifTak;             
+        }
+    });
+</script>
+</body>
+</html>
